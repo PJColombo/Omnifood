@@ -1,0 +1,630 @@
+/*
+INDEX
+
+Basic Setup
+Reusable Components
+Paragraphs
+Buttons
+Icons
+*/
+
+/*
+    Basic Setup
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html,
+body {
+    background-color: rgb(255, 236, 200);
+    color: #555;
+    font-family: 'Lato', 'Arial', sans-serif;
+    /*sans-serif es una palabra reservada que le indica al navegador usar cualquier tipo de letra sans-serif*/
+    font-size: 20px;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+    /*Opmtimiza la renderizacion del tipo de letra*/
+}
+
+/* It clears floats after the element */
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+/*----------------------REUSABLE COMPONENTS----------------------------------------*/
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+    /*Es equivalente a margin: 0 auto 0 auto*/
+}
+
+section {
+    padding: 80px 0;
+}
+
+.box {
+    padding: 1%;
+}
+
+/*-------------LINKS----------------*/
+
+a:visited,
+a:link {
+    color: #ea3d03d3;
+    text-decoration: none;
+    border-bottom: 1px solid #ea3d03d3;
+    padding-bottom: 1%;
+    transition: color 0.5s, border-bottom 0.5s;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #555;
+    border-bottom: 1px solid transparent;
+}
+
+/*---------------------HEADERS----------------------------------------*/
+
+h1,
+h2,
+h3 {
+    /*margin: 0; /*Ponemos a 0 el margen que establece por defecto el fichero css normalize, para evitar esos espacios en el texto*/
+
+    font-weight: 300;
+    text-transform: uppercase;
+    /*text-decoration: tomato underline;*/
+
+}
+
+h1 {
+    margin-top: 0;
+    /* margin-bottom: 1%; */
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+    font-size: 200%;
+    word-spacing: 5px;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+h3 {
+    font-size: 110%;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+/*Usamos esto para poner una linea debajo del texto pero sin cubrir todas las palabras del texto (como un subrayado)
+sino una unica porcion*/
+
+h2:after {
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: #ea3e03;
+    content: " ";
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+/*-------------------PARAGRAPHS------------------------*/
+
+.long-paragraph {
+    text-align: center;
+    line-height: 145%;
+    width: 70%;
+    margin-left: 15%;
+    margin-bottom: 3%;
+    margin-top: 3%;
+}
+
+.box p {
+    font-size: 85%;
+    text-align: justify;
+    line-height: 145%;
+}
+
+/*-------------------BUTTONS------------------------*/
+
+.btn:link,
+.btn:visited,
+input[type=submit] {
+    border-radius: 200px;
+    display: inline-block;
+    margin: 1%;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    /*eliminamos el subrayado que viene con los enlaces en <a>*/
+    transform: translate(-15px);
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.btn-full:link,
+.btn-full:visited,
+input[type=submit] {
+    color: #fff;
+    background-color: #ea3e03;
+    border: 1px solid #ea3e03;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+    border: 1px solid #ea3e03;
+    /*este pixel extra de borde hace que el boton ghost sea ligeramente mas grande*/
+    color: #ea3e03;
+}
+
+.btn:hover,
+.btn:active,
+input[type=submit]:hover,
+input[type=submit]:active {
+    background: #ea3d039d;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+    color: #fff;
+}
+
+
+/*-------------------------------------------*/
+/*HEADER*/
+
+header {
+    /*el gradiente nos ayuda a oscurecer UNICAMENTE la imagen*/
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/hero.jpg);
+    background-size: cover;
+    /*Con esto evitamos que la imagen se vea con demasiado zoom*/
+    background-position: center;
+    /*Hacemos que la imagen se vea centrada*/
+    height: 100vh;
+    /*Para que la imagen ocupe todo el espacio del viewport*/
+    /*filter: brightness(30%); Esto no afecta solo al brillo del background sino a todos los elementos*/
+    background-attachment: fixed;
+}
+
+.hero-text-box {
+    position: absolute;
+    width: 1140px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* mueve el elemento la mitad de su anchura y altura hacia arriba y a la izquierda
+    Los valores que recibe translate son el valor en el eje horizontal y en el eje vertical (podemos pasarle otras 
+    unidades como pixeles
+    */
+}
+
+/*Navigation*/
+.logo {
+    height: 100px;
+    width: auto;
+    float: left;
+    margin-top: 20px;
+}
+
+.navigation-tab {
+    float: right;
+    list-style: none;
+    /*Eliminamos los puntos de cada lista*/
+    margin-top: 20px;
+
+}
+
+.navigation-tab li {
+    display: inline-block;
+    margin-right: 40px;
+}
+
+.navigation-tab li a:link,
+.navigation-tab li a:visited {
+    padding: 8px 0;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    letter-spacing: 1px;
+    border-bottom: 2px solid transparent;
+    /*Necesitamos esto para que la transicion empieze desde un subrayado del mismo formato*/
+    transition: color 0.5s, border-bottom 0.5s;
+}
+
+.navigation-tab li a:hover,
+.navigation-tab li a:active {
+    color: #ea3e03;
+
+    /*text-decoration: underline #ea3e03; En vez de subrayado usamos un border*/
+    border-bottom: 2px solid #ea3e03;
+}
+
+
+/*-------------ICONS----------------*/
+
+/*Los iconos pueden ser considerados como fuentes (fonts)*/
+.icon-features {
+    font-size: 300%;
+    display: block;
+    color: #ea3d03d3;
+    margin-bottom: 5%;
+    margin-left: 36%;
+}
+
+/*-------------MEALS----------------*/
+
+.section-meals {
+    padding: 0;
+}
+
+.meals-showcase {
+    list-style: none;
+    width: 100%;
+}
+
+.meals-showcase li {
+    display: block;
+    float: left;
+    width: 25%;
+}
+
+.meal {
+    width: 100%;
+    margin: 0;
+    /*Volvemos a poner margen a 0 por que normalize.css reescribe el margen de los elementos figure*/
+    overflow: hidden;
+    /*Impide que los elementos que posee este contenedor
+    lo desborden evitando añadir scroll bars*/
+    background-color: #000000;
+}
+
+.meal img {
+    opacity: 0.7;
+    width: 100%;
+    transform: scale(1.15);
+    transition: transform 1.5s, opacity 1s;
+}
+
+.meal img:hover {
+    transform: scale(1.03);
+    opacity: 1;
+}
+
+
+/*-------------HOW IT WORKS----------------*/
+
+.section-how-it-works {
+    background-color: #f3e8e3da;
+}
+
+.how-works-box {
+    margin-top: 30px;
+}
+
+/* Otra forma de alinear la imagen, text align funciona debido a que la image es INLINE block */
+/* .how-works-box:first-child {
+    text-align: right;
+    padding: 3%;
+} */
+.app-screen {
+    display: block;
+    margin: 0 auto;
+    width: 40%;
+}
+
+.how-works-box:last-child {
+    margin-top: 10%;
+    padding-left: 3%;
+}
+
+.work-steps:last-of-type {
+    margin-bottom: 12%;
+}
+
+.work-steps {
+    margin-bottom: 7%;
+}
+
+.work-steps div {
+    color: #ea3d03d3;
+    border: solid 2px #ea3d03d3;
+    border-radius: 50%;
+    width: 10%;
+    height: 50px;
+    text-align: center;
+    padding: 1%;
+    /* display: inline-block; De forma que el elemento no fuerce un salto de linea */
+    float: left;
+    margin-right: 4%;
+    font-size: 150%;
+}
+
+/* Avoid using a css link format wrote above. */
+.btn-app:link,
+.btn-app:visited {
+    border: 0;
+}
+
+.btn-app img {
+    width: auto;
+    height: 50px;
+    margin-left: 2%;
+}
+
+
+/*-------------CITIES----------------*/
+
+.city {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 7% auto;
+}
+
+.city-features {
+    font-size: 100%;
+    margin-top: 10%;
+}
+
+.city-feature-icon {
+    color: #ea3d03d3;
+    font-size: 140%;
+    margin-bottom: 0;
+    display: inline-block;
+    text-align: center;
+    line-height: 140%;
+    vertical-align: middle;
+    margin-right: 5%;
+}
+
+
+/*-------------TESTIMONIAL SECTION----------------*/
+
+.section-testimonials {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("img/back-customers.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+
+    color: white;
+}
+
+blockquote {
+    font-style: italic;
+    padding: 2%;
+    line-height: 145%;
+    /* position: relative; */
+}
+
+blockquote:before,
+cite:before {
+    font-size: 400%;
+    font-style: italic;
+    display: block;
+    /* position: absolute;
+    top: 0;
+    left: -3px; */
+}
+
+blockquote:before {
+    content: '\201C';
+}
+
+cite {
+    font-size: 90%;
+    margin-top: 2%;
+    display: block;
+}
+
+cite:before {
+    content: '\201D';
+    text-align: right;
+}
+
+cite img {
+    border-radius: 50%;
+    vertical-align: middle;
+    width: 15%;
+    margin-right: 3%;
+}
+
+/*-------------PLANS----------------*/
+
+
+
+.section-plans {
+    background-color: #f3e8e3da;
+}
+
+.plan-box {
+    background-color: #fff;
+    border-radius: 1%;
+    width: 90%;
+    margin-left: 5%;
+    -webkit-box-shadow: -11px 26px 31px -6px rgba(194, 194, 194, 1);
+    -moz-box-shadow: -11px 26px 31px -6px rgba(194, 194, 194, 1);
+    box-shadow: -11px 26px 31px -6px rgba(194, 194, 194, 1);
+}
+
+.plan-box div {
+    padding: 5%;
+    border-bottom: 1px solid #e9e5e5;
+}
+
+.plan-box div:first-child {
+    background-color: #fcfcfc;
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
+}
+
+.plan-price {
+    font-size: 300%;
+    margin-bottom: 5%;
+    color: #ff4000bb;
+    font-weight: 100;
+}
+
+.plan-price span {
+    font-size: 45%;
+    font-weight: 300;
+}
+
+.plan-price-meal {
+    font-size: 80%;
+}
+
+.plan-box ul {
+    list-style: none;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.plan-box ul li {
+    padding: 2% 0;
+}
+
+.plan-box div ul ion-icon {
+    color: #ea3d03d3;
+    vertical-align: middle;
+    margin-right: 5%;
+    width: 4.5%;
+}
+
+.plan-box div:last-child {
+    text-align: center;
+    border-bottom: none;
+}
+
+/*-------------FORM----------------*/
+
+.contact-form {
+    width: 60%;
+    margin: 0 auto;
+}
+
+input[type=text],
+input[type=email],
+select,
+textarea {
+    width: 100%;
+    padding: 1%;
+    border-radius: 2%;
+    border: 1px solid rgb(219, 215, 215);
+}
+
+input[type=submit] {
+    margin-left: 5%;
+    margin-top: 4%;
+}
+
+textarea {
+    height: 100px;
+}
+
+input[type=checkbox] {
+    margin: 3% 0;
+}
+
+*:focus {
+    outline: none;
+}
+
+
+
+/*-------------FOOTER----------------*/
+
+
+* {
+    /* border: solid 1px black; */
+}
+
+footer {
+    background-color: #3f3939;
+    color: #868383;
+    font-size: 90%;
+}
+
+.footer-nav {
+    list-style: none;
+    float: left;
+}
+
+.social-icons {
+    list-style: none;
+    float: right;
+}
+
+.footer-nav li,
+.social-icons li {
+    display: inline-block;
+    margin-right: 12px;
+}
+
+.footer-nav li:last-child,
+.social-icons li:last-child {
+    margin-right: 0;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-icons li a:link,
+.social-icons li a:visited {
+    text-decoration: none;
+    border: none;
+    color: #868383;
+}
+
+.footer-nav li a:hover {
+    color: white;
+}
+
+.logo-facebook,
+.logo-twitter,
+.logo-googleplus,
+.logo-instagram {
+    transition: color 0.5s;
+    font-size: 180%;
+}
+
+.logo-facebook:hover {
+    color: #3b5998;
+}
+
+.logo-twitter:hover {
+    color: #1da1f2;
+}
+
+.logo-googleplus:hover {
+    color: #db4437;
+}
+
+.logo-instagram:hover {
+    color: #c32aa3;
+}
+
+footer div.row:last-child {
+    padding: 5%;
+    text-align: center;
+}
+
+footer div.row:first-child {
+    padding-top: 3%;
+}
