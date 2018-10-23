@@ -27,8 +27,12 @@ body {
     /*sans-serif es una palabra reservada que le indica al navegador usar cualquier tipo de letra sans-serif*/
     font-size: 20px;
     font-weight: 300;
-    text-rendering: optimizeLegibility;
     /*Opmtimiza la renderizacion del tipo de letra*/
+    text-rendering: optimizeLegibility;
+    /* Oculta el texto que sobresale horizontalmente (elimina scrolls horizontales) */
+    overflow-x: hidden;
+    
+
 }
 
 /* It clears floats after the element */

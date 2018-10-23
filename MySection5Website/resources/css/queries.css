@@ -1,4 +1,3 @@
-
 /* From big tables to 1200px (widths smaller than
 the 1140px row*/
 @media only screen and (max-width: 1200px) {
@@ -7,14 +6,21 @@ the 1140px row*/
         padding: 0 2%;
     }
 
-    .row { padding: 0 2%; }
-} 
+    .row {
+        padding: 0 2%;
+    }
+}
 
 /* Small tables to big tablets from
 768px to 1023px (1024px is the size of landscape ipad)*/
 @media only screen and (max-width: 1023px) {
-    body { font-size: 18px; }
-    section { padding: 60px 0; }
+    body {
+        font-size: 18px;
+    }
+
+    section {
+        padding: 60px 0;
+    }
 
     .long-paragraph {
         text-align: center;
@@ -24,17 +30,103 @@ the 1140px row*/
         margin-bottom: 3%;
         margin-top: 3%;
     }
-} 
+
+    .how-works-box {
+        margin-top: 10px;
+    }
+
+    .how-works-box:last-child {
+        margin-top: 10px;
+    }
+
+    .work-steps {
+        margin-bottom: 40px;
+    }
+
+    .work-steps:last-of-type {
+        margin-bottom: 60px;
+    }
+
+    .app-screen {
+        width: 50%;
+    }
+
+    .plan-price {
+        font-size: 250%;
+    }
+
+    .contact-form {
+        width: 80%;
+    }
+}
 
 /* Phones smaller than Ipad (768px)
 from 481px to 767px */
 @media only screen and (max-width: 767px) {
-    
-} 
+    body {
+        font-size: 16px;
+    }
 
-/* Small phones from 0 to 480px */
-@media only screen and (max-width: 480px) {
+    section {
+        padding: 30px;
+    }
 
+    .row,
+    .hero-text-box {
+        padding: 0 4%;
+    }
+
+    /* Columnas no se dispondran lado a lado, sino
+    una sobre otra. */
+    .col {
+        width: 100%;
+        /* Arregla el desposicionamiento de la 
+        primera columna */
+        margin: 0 0 1.6%;
+    }
+
+    .navigation-tab {
+        display: none;
+    }
+
+    h1 {
+        font-size: 180%;
+    }
+
+    h2 {
+        font-size: 150%;
+    }
+
+    .long-paragraph {
+        text-align: center;
+        line-height: 145%;
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 3%;
+        margin-top: 3%;
+    }
+
+    .how-works-box {
+        margin-top: 10px;
+    }
+
+    .work-steps {
+        margin-bottom: 40px;
+    }
+
+    .work-steps div {
+        border: solid 2px #ea3d03d3;
+        width: 40px;
+        height: 40px;
+        margin-right: 3%;
+        font-size: 150%;
+    }
+
+    .app-screen {
+        width: 40%;
+        margin-bottom: 5%;
+    }
 }
 
-
+/* Small phones from 0 to 480px */
+@media only screen and (max-width: 480px) {}
